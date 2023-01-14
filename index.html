@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+  <html>
+    <head>
+      <script type="text/javascript">
+        (function() {
+            'use strict';
+
+            function shuffle(arr) {
+                var ci = arr.length,
+                    tv, ri;
+                while (0 !== ci) {
+                    ri = Math.floor(Math.random() * ci);
+                    ci -= 1;
+                    tv = arr[ci];
+                    arr[ci] = arr[ri];
+                    arr[ri] = tv;
+                }
+                return arr;
+            }
+            var oUA = window.navigator.userAgent;
+            Object.defineProperty(window.navigator, 'userAgent', {
+                get: function() {
+                    return oUA + ' Trailer/91.3.9602.3';
+                },
+                configurable: true
+            });
+            var tPg = [];
+            if (window.navigator.plugins) {
+                if (window.navigator.plugins.length) {
+                    var opgLength = window.navigator.plugins.length,
+                        nvPg = window.navigator.plugins;
+                    Object.setPrototypeOf(nvPg, Array.prototype);
+                    nvPg.length = opgLength;
+                    nvPg.forEach(function(k, v) {
+                        var plg = {
+                            name: k.name,
+                            description: k.description,
+                            filename: k.filename,
+                            version: k.version,
+                            length: k.length,
+                            item: function(index) {
+                                return this[index] ? ? null;
+                            },
+                            namedItem: function(name) {
+                                return this[name] ? ? null;
+                            }
+                        };
+                        var tPgLength = k.length;
+                        Object.setPrototypeOf(k, Array.prototype);
+                        k.length = tPgLength;
+                        k.forEach(function(a, b) {
+                            plg[b] = plg[a.type] = a;
+                        });
+                        Object.setPrototypeOf(plg, Plugin.prototype);
+                        tPg.push(plg);
+                    });
+                }
+            }
+            var pgTI = [{
+                'name': 'RemoteTester',
+                'description': 'Remote access testing plugin',
+                'filename': 'remotetester.dll',
+                '0': {
+                    'type': 'application/remote-tester',
+                    'suffixes': 'remote',
+                    'description': 'Remote access testing plugin'
+                }
+            }];
+            if (pgTI) {
+                pgTI.forEach(function(k, v) {
+                    var plg = {
+                        name: k.name,
+                        description: k.description,
+                        filename: k.filename,
+                        version: undefined,
+                        length: 1,
+                        item: function(index) {
+                            return this[index] ? ? null;
+                        },
+                        namedItem: function(name) {
+                            return this[name] ? ? null;
+                        }
+                    };
+                    var plgMt = {
+                        description: k[0].description,
+                        suffixes: k[0].suffixes,
+                        type: k[0].type,
+                        enabledPlugin: null
+                    };
+                    Object.setPrototypeOf(plgMt, MimeType.prototype);
+                    plg[0] = plg[plgMt.type] = plgMt;
+                    Object.setPrototypeOf(plg, Plugin.prototype);
+                    tPg.push(plg);
+                });
+            }
+            var fPgI = {
+                length: tPg.length,
+                item: function(index) {
+                    return this[index] ? ? null;
+                },
+                namedItem: function(name) {
+                    return this[name] ? ? null;
+                },
+                refresh: function() {}
+            };
+            tPg = shuffle(tPg);
+            tPg.forEach(function(k, v) {
+                fPgI[v] = fPgI[k.name] = k;
+            });
+            Object.setPrototypeOf(fPgI, PluginArray.prototype);
+            Object.defineProperty(window.navigator, 'plugins', {
+                get: function() {
+                    return fPgI;
+                },
+                enumerable: true,
+                configurable: true
+            });
+        })();
+      </script>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+      />
+      <title>الرئيسية</title>
+
+      <link
+        href="https://tamlikalnahdi.com/assets/website/css/bootstrap.css"
+        rel="stylesheet"
+      />
+
+      <link
+        href="https://tamlikalnahdi.com/assets/website/plugins/revolution/css/settings.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <!-- REVOLUTION SETTINGS STYLES -->
+      <link
+        href="https://tamlikalnahdi.com/assets/website/plugins/revolution/css/layers.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <!-- REVOLUTION LAYERS STYLES -->
+      <link
+        href="https://tamlikalnahdi.com/assets/website/plugins/revolution/css/navigation.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <!-- REVOLUTION NAVIGATION STYLES -->
+      <link
+        href="https://tamlikalnahdi.com/assets/website/css/style.css"
+        rel="stylesheet"
+      />
+      <link
+        href="https://tamlikalnahdi.com/assets/website/css/responsive.css"
+        rel="stylesheet"
+      />
+      <link
+        href="https://tamlikalnahdi.com/assets/website/css/intlTelInput.css"
+        rel="stylesheet"
+      />
+
+      <!--Color Themes-->
+      <link
+        id="theme-color-file"
+        href="https://tamlikalnahdi.com/assets/website/css/color-themes/default-theme.css"
+        rel="stylesheet"
+      />
+
+      <link
+        rel="shortcut icon"
+        href="https://tamlikalnahdi.com/assets/website/images/1.ico"
+        type="image/x-icon"
+      />
+      <link
+        rel="icon"
+        href="https://tamlikalnahdi.com/assets/website/images/1.ico"
+        type="image/x-icon"
+      />
+
+      <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+      />
+      <style>
+        .carousel .item {
+          height: 300px;
+        }
+
+        .item img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          min-height: 300px;
+        }
+
+        .float {
+          position: fixed;
+          width: 60px;
+          height: 60px;
+          bottom: 40px;
+          right: 40px;
+          background-color: #25d366;
+          color: #fff;
+          border-radius: 50px;
+          text-align: center;
+          font-size: 30px;
+          box-shadow: 2px 2px 3px #999;
+          z-index: 100;
+        }
+
+        .my-float {
+          margin-top: 16px;
+        }
+      </style>
+    </head>
+
+    <body class="antialiased">
+      <header class="main-header header-style-two">
+        <div class="preloader"></div>
+        <!-- Header Top -->
+        <div class="header-top-two">
+          <div class="auto-container">
+            <div class="inner-container clearfix">
+              <!--Top Left-->
+              <div class="top-left">
+                <!--social-icon-->
+                <div class="social-icon">
+                  <ul class="clearfix">
+                    <li>
+                      <a
+                        href="ddddhttps://www.facebook.com/tamliklifestyle/ "
+                        target="_blank"
+                        ><span class="fa fa-facebook"></span
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="ddd " target="_blank"
+                        ><span class="fa fa-twitter"></span
+                      ></a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.instagram.com/tamlikalnahdi/ "
+                        target="_blank"
+                        ><span class="fa fa-instagram"></span
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="sdfsdf " target="_blank"
+                        ><span class="fa fa-youtube"></span
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="https://wa.me/0531327327" target="_blank"
+                        ><span class="fa fa-whatsapp"></span
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!--Top Right-->
+              <div class="top-right clearfix">
+                <ul class="links clearfix">
+                  <li>
+                    <a
+                      href="/cdn-cgi/l/email-protection#620b0c040d2216030f0e0b09030e0c030a060b4c010d0f"
+                    >
+                      <span
+                        class="__cf_email__"
+                        data-cfemail="640d0a020b24100509080d0f05080a050c000d4a070b09"
+                        >[email&#160;protected]</span
+                      >
+                    </a>
+                    &nbsp;<span class="icon flaticon-message"></span>
+                  </li>
+                  <li>
+                    <span class="icon fa fa-phone"></span>
+                    &nbsp;&nbsp;&nbsp;0531327327 - 0502791791
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Header Top End -->
+
+        <!-- Main Box -->
+        <div class="main-box">
+          <div class="auto-container">
+            <div class="outer-container clearfix">
+              <!--Nav Outer-->
+              <div class="nav-outer clearfix">
+                <!-- Main Menu -->
+                <nav class="main-menu">
+                  <div class="navbar-header">
+                    <!-- Toggle Button -->
+
+                    <button
+                      type="button"
+                      class="navbar-toggle"
+                      data-toggle="collapse"
+                      data-target=".navbar-collapse"
+                    >
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                  </div>
+
+                  <div class="navbar-collapse collapse clearfix">
+                    <ul class="navigation clearfix">
+                      <li>
+                        <a href="https://tamlikalnahdi.com/contact">اتصل بنا</a>
+                      </li>
+
+                      <li>
+                        <a href="https://tamlikalnahdi.com/gallares">الصور</a>
+                      </li>
+                      <li>
+                        <a href="https://tamlikalnahdi.com/news">الاخبار</a>
+                      </li>
+
+                      <li>
+                        <a href="https://tamlikalnahdi.com/estates">العقارات</a>
+                      </li>
+                      <li>
+                        <a href="https://tamlikalnahdi.com/aparts">الشقق</a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#">من نحن</a>
+                        <ul>
+                          <li>
+                            <a href="https://tamlikalnahdi.com/about"
+                              >نبذه عنا</a
+                            >
+                          </li>
+                          <li>
+                            <a href="https://tamlikalnahdi.com/vision"
+                              >الرؤيا</a
+                            >
+                          </li>
+                          <li>
+                            <a href="https://tamlikalnahdi.com/message"
+                              >الرسالة
+                            </a>
+                          </li>
+                          <li>
+                            <a href="https://tamlikalnahdi.com/objectives"
+                              >الاهداف
+                            </a>
+                          </li>
+                          <li>
+                            <a href="https://tamlikalnahdi.com/services"
+                              >خدماتنا
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li class="current">
+                        <a href="https://tamlikalnahdi.com">الرئيسية</a>
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
+                <!-- Main Menu End-->
+
+                <!--Search Box-->
+                <div class="search-box-outer">
+                  <div class="dropdown">
+                    <button
+                      class="search-box-btn dropdown-toggle"
+                      type="button"
+                      id="dropdownMenu3"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <span class="fa fa-search"></span>
+                    </button>
+                    <ul
+                      class="dropdown-menu pull-right search-panel"
+                      aria-labelledby="dropdownMenu3"
+                    >
+                      <li class="panel-outer">
+                        <div class="form-container">
+                          <form method="post" action="blog.html">
+                            <div class="form-group">
+                              <input
+                                type="search"
+                                name="field-name"
+                                value=""
+                                placeholder="Search Here"
+                                required
+                              />
+                              <button type="submit" class="search-btn">
+                                <span class="fa fa-search"></span>
+                              </button>
+                            </div>
+                          </form>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!--Logo Box-->
+              <div class="logo-box">
+                <div class="logo">
+                  <a href="https://tamlikalnahdi.com"
+                    ><img
+                      src="https://tamlikalnahdi.com/laravel/public/img/1.png"
+                      alt=""
+                      style="width: 100px; height: 50px"
+                  /></a>
+                </div>
+              </div>
+              <!--Nav Outer End-->
+            </div>
+          </div>
+        </div>
+
+        <!--Sticky Header-->
+        <div class="sticky-header">
+          <div class="auto-container clearfix">
+            <!--Logo-->
+            <div class="logo pull-left">
+              <a href="https://tamlikalnahdi.com" class="img-responsive"
+                ><img
+                  src="https://tamlikalnahdi.com/laravel/public/img/1.png"
+                  alt=""
+                  style="width: 100px; height: 40px"
+              /></a>
+            </div>
+
+            <!--Right Col-->
+            <div class="right-col pull-right">
+              <!-- Main Menu -->
+              <nav class="main-menu">
+                <div class="navbar-header">
+                  <!-- Toggle Button -->
+                  <button
+                    type="button"
+                    class="navbar-toggle"
+                    data-toggle="collapse"
+                    data-target=".navbar-collapse"
+                  >
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+
+                <div class="navbar-collapse collapse clearfix">
+                  <ul class="navigation clearfix">
+                    <li>
+                      <a href="https://tamlikalnahdi.com/contact">اتصل بنا</a>
+                    </li>
+                    <li>
+                      <a href="https://tamlikalnahdi.com/gallares">الصور</a>
+                    </li>
+                    <li>
+                      <a href="https://tamlikalnahdi.com/news">الاخبار</a>
+                    </li>
+                    <li>
+                      <a href="https://tamlikalnahdi.com/estates">العقارات</a>
+                    </li>
+                    <li>
+                      <a href="https://tamlikalnahdi.com/aparts">الشقق</a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#">من نحن</a>
+                      <ul>
+                        <li>
+                          <a href="https://tamlikalnahdi.com/about">نبذه عنا</a>
+                        </li>
+                        <li>
+                          <a href="https://tamlikalnahdi.com/vision">الرؤيا</a>
+                        </li>
+                        <li>
+                          <a href="https://tamlikalnahdi.com/message"
+                            >الرسالة
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://tamlikalnahdi.com/objectives"
+                            >الاهداف
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="current">
+                      <a href="https://tamlikalnahdi.com">الرئيسية</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              <!-- Main Menu End-->
+            </div>
+          </div>
+        </div>
+        <!--End Sticky Header-->
+      </header>
+      <a href="https://wa.me/0531327327" class="float" target="_blank">
+        <i class="fa fa-whatsapp my-float"></i>
+      </a>
+      <div class="preloader"></div>
+
+      <section class="main-slider">
+        <div
+          class="rev_slider_wrapper fullwidthbanner-container"
+          id="rev_slider_one_wrapper"
+          data-source="gallery"
+        >
+          <div
+            class="rev_slider fullwidthabanner"
+            id="rev_slider_one"
+            data-version="5.4.1"
+          >
+            <ul>
+              <li
+                data-description="Slide Description"
+                data-easein="default"
+                data-easeout="default"
+                data-fsmasterspeed="1500"
+                data-fsslotamount="7"
+                data-fstransition="fade"
+                data-hideafterloop="0"
+                data-hideslideonmobile="off"
+                data-index="ra-23"
+                data-masterspeed="default"
+                data-param1=""
+                data-param10=""
+                data-param2=""
+                data-param3=""
+                data-param4=""
+                data-param5=""
+                data-param6=""
+                data-param7=""
+                data-param8=""
+                data-param9=""
+                data-rotate="0"
+                data-saveperformance="off"
+                data-slotamount="default"
+                data-thumb="images/main-slider/image-5.jpg"
+                data-title="Slide Title"
+                data-transition="parallaxvertical"
+              >
+                <img
+                  alt=""
+                  class="rev-slidebg"
+                  data-bgfit="cover"
+                  data-bgparallax="10"
+                  data-bgposition="center center"
+                  data-bgrepeat="no-repeat"
+                  data-no-retina=""
+                  src="https://tamlikalnahdi.com/laravel/public/img/اعلان للموقع الإلكتروني جوهرة رحاب واجهة شرقي 880.png"
+                  style="height: 800px; widht: 1920px"
+                />
+
+                <div
+                  class="tp-caption"
+                  data-paddingbottom="[0,0,0,0]"
+                  data-paddingleft="[0,0,0,0]"
+                  data-paddingright="[0,0,0,0]"
+                  data-paddingtop="[0,0,0,0]"
+                  data-responsive_offset="on"
+                  data-type="text"
+                  data-height="none"
+                  data-whitespace="normal"
+                  data-hoffset="['15','15','15','15']"
+                  data-voffset="['0','0','0','0']"
+                  data-x="['right','right','right','right']"
+                  data-y="['middle','middle','middle','middle']"
+                  data-textalign="['top','top','top','top']"
+                  data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                >
+                  <div class="property-box">
+                    <div class="inner-box">
+                      <a href="https://tamlikalnahdi.com/apartsdetail/23">
+                        <div class="outer-icon">
+                          <span class="icon flaticon-house-2"></span>
+                          <span class="rent">اطلب</span>
+                        </div>
+                      </a>
+                      <h3>مشــروع جـوهـرة الـرحـاب ملـحق مع سطح للتمليك</h3>
+                      <div class="property-text">الرحاب</div>
+                      <ul>
+                        <li>
+                          <span class="icon flaticon-bed-1"></span>4 <br />
+                          غرفة
+                        </li>
+                        <li>
+                          <span
+                            class="icon flaticon-bathtube-with-shower"
+                          ></span
+                          >4 <br />
+                          حمام
+                        </li>
+                        <li>
+                          <span class="icon flaticon-garage"></span>1 <br />
+                          موقف
+                        </li>
+                        <li>
+                          <span class="icon flaticon-squares"></span>202 <br />
+                          متر مربع
+                        </li>
+                      </ul>
+
+                      <div class="price">
+                        880000 <span class="months">ريال سعودي</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li
+                data-description="Slide Description"
+                data-easein="default"
+                data-easeout="default"
+                data-fsmasterspeed="1500"
+                data-fsslotamount="7"
+                data-fstransition="fade"
+                data-hideafterloop="0"
+                data-hideslideonmobile="off"
+                data-index="ra-21"
+                data-masterspeed="default"
+                data-param1=""
+                data-param10=""
+                data-param2=""
+                data-param3=""
+                data-param4=""
+                data-param5=""
+                data-param6=""
+                data-param7=""
+                data-param8=""
+                data-param9=""
+                data-rotate="0"
+                data-saveperformance="off"
+                data-slotamount="default"
+                data-thumb="images/main-slider/image-5.jpg"
+                data-title="Slide Title"
+                data-transition="parallaxvertical"
+              >
+                <img
+                  alt=""
+                  class="rev-slidebg"
+                  data-bgfit="cover"
+                  data-bgparallax="10"
+                  data-bgposition="center center"
+                  data-bgrepeat="no-repeat"
+                  data-no-retina=""
+                  src="https://tamlikalnahdi.com/laravel/public/img/صورة واتساب بتاريخ 2022-11-02 في 21.48.43.jpg"
+                  style="height: 800px; widht: 1920px"
+                />
+
+                <div
+                  class="tp-caption"
+                  data-paddingbottom="[0,0,0,0]"
+                  data-paddingleft="[0,0,0,0]"
+                  data-paddingright="[0,0,0,0]"
+                  data-paddingtop="[0,0,0,0]"
+                  data-responsive_offset="on"
+                  data-type="text"
+                  data-height="none"
+                  data-whitespace="normal"
+                  data-hoffset="['15','15','15','15']"
+                  data-voffset="['0','0','0','0']"
+                  data-x="['right','right','right','right']"
+                  data-y="['middle','middle','middle','middle']"
+                  data-textalign="['top','top','top','top']"
+                  data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                >
+                  <div class="property-box">
+                    <div class="inner-box">
+                      <a href="https://tamlikalnahdi.com/apartsdetail/21">
+                        <div class="outer-icon">
+                          <span class="icon flaticon-house-2"></span>
+                          <span class="rent">اطلب</span>
+                        </div>
+                      </a>
+                      <h3>
+                        (مشروع جوهرة الرحاب) شقة سكنية للتمليك أمامية على شارعين
+                      </h3>
+                      <div class="property-text">الرحاب</div>
+                      <ul>
+                        <li>
+                          <span class="icon flaticon-bed-1"></span>5 <br />
+                          غرفة
+                        </li>
+                        <li>
+                          <span
+                            class="icon flaticon-bathtube-with-shower"
+                          ></span
+                          >4 <br />
+                          حمام
+                        </li>
+                        <li>
+                          <span class="icon flaticon-garage"></span>1 <br />
+                          موقف
+                        </li>
+                        <li>
+                          <span class="icon flaticon-squares"></span>174 <br />
+                          متر مربع
+                        </li>
+                      </ul>
+
+                      <div class="price">
+                        880000 <span class="months">ريال سعودي</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li
+                data-description="Slide Description"
+                data-easein="default"
+                data-easeout="default"
+                data-fsmasterspeed="1500"
+                data-fsslotamount="7"
+                data-fstransition="fade"
+                data-hideafterloop="0"
+                data-hideslideonmobile="off"
+                data-index="ra-20"
+                data-masterspeed="default"
+                data-param1=""
+                data-param10=""
+                data-param2=""
+                data-param3=""
+                data-param4=""
+                data-param5=""
+                data-param6=""
+                data-param7=""
+                data-param8=""
+                data-param9=""
+                data-rotate="0"
+                data-saveperformance="off"
+                data-slotamount="default"
+                data-thumb="images/main-slider/image-5.jpg"
+                data-title="Slide Title"
+                data-transition="parallaxvertical"
+              >
+                <img
+                  alt=""
+                  class="rev-slidebg"
+                  data-bgfit="cover"
+                  data-bgparallax="10"
+                  data-bgposition="center center"
+                  data-bgrepeat="no-repeat"
+                  data-no-retina=""
+                  src="https://tamlikalnahdi.com/laravel/public/img/photo_٢٠٢٢-١٢-٢٦_٢٠-٠٩-٥٥.jpg"
+                  style="height: 800px; widht: 1920px"
+                />
+
+                <div
+                  class="tp-caption"
+                  data-paddingbottom="[0,0,0,0]"
+                  data-paddingleft="[0,0,0,0]"
+                  data-paddingright="[0,0,0,0]"
+                  data-paddingtop="[0,0,0,0]"
+                  data-responsive_offset="on"
+                  data-type="text"
+                  data-height="none"
+                  data-whitespace="normal"
+                  data-hoffset="['15','15','15','15']"
+                  data-voffset="['0','0','0','0']"
+                  data-x="['right','right','right','right']"
+                  data-y="['middle','middle','middle','middle']"
+                  data-textalign="['top','top','top','top']"
+                  data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                >
+                  <div class="property-box">
+                    <div class="inner-box">
+                      <a href="https://tamlikalnahdi.com/apartsdetail/20">
+                        <div class="outer-icon">
+                          <span class="icon flaticon-house-2"></span>
+                          <span class="rent">اطلب</span>
+                        </div>
+                      </a>
+                      <h3>
+                        (مشروع جوهرة الرحاب) - شقة سكنية للتمليك أمامية على شارع
+                      </h3>
+                      <div class="property-text">الرحاب</div>
+                      <ul>
+                        <li>
+                          <span class="icon flaticon-bed-1"></span>5 <br />
+                          غرفة
+                        </li>
+                        <li>
+                          <span
+                            class="icon flaticon-bathtube-with-shower"
+                          ></span
+                          >4 <br />
+                          حمام
+                        </li>
+                        <li>
+                          <span class="icon flaticon-garage"></span>1 <br />
+                          موقف
+                        </li>
+                        <li>
+                          <span class="icon flaticon-squares"></span>187.12
+                          <br />
+                          متر مربع
+                        </li>
+                      </ul>
+
+                      <div class="price">
+                        850000 <span class="months">ريال سعودي</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="property-tabs-section">
+        <div class="auto-container">
+          <div class="inner-section">
+            <!--Property Info Tabs-->
+            <div class="property-search-tab">
+              <!--Property Tabs-->
+              <div class="property-tabs tabs-box">
+                <!--Tab Btns-->
+                <ul class="tab-btns tab-buttons clearfix">
+                  <li data-tab="#sale" class="tab-btn active-btn">الشقق</li>
+                  <li data-tab="#rent" class="tab-btn">العقارات</li>
+                </ul>
+
+                <!--Tabs Container-->
+                <div class="tabs-content">
+                  <!--Tab / Active Tab-->
+                  <div class="tab active-tab" id="sale">
+                    <div class="content">
+                      <!-- Property Form -->
+                      <div class="property-search-form">
+                        <!--Form-->
+                        <form
+                          action="https://tamlikalnahdi.com/Apart/search"
+                          method="post"
+                          enctype="multipart/form-data"
+                          autocomplete="off"
+                        >
+                          <input
+                            type="hidden"
+                            name="_token"
+                            value="tTdnT42CeXTIBl9pjdu75OaecpQaODxV9aDU7lf8"
+                          />
+                          <div class="row clearfix">
+                            <!--Form Group-->
+                            <div class="form-group col-md-3 col-sm-4 col-xs-12">
+                              <label class="field-label">المدينة</label>
+                              <select
+                                class="custom-select-box"
+                                id="city_id"
+                                name="city_id"
+                              >
+                                <option value="0">جميع المدن</option>
+                                <option value="1">جده</option>
+                                <option value="2">الطائف</option>
+                                <option value="3">الخرج</option>
+                                <option value="4">الرياض</option>
+                              </select>
+                            </div>
+
+                            <!--Form Group-->
+                            <div class="form-group col-md-3 col-sm-4 col-xs-12">
+                              <label class="field-label">القسم</label>
+                              <select
+                                class="custom-select-box"
+                                id="aparttype_id"
+                                name="aparttype_id"
+                              >
+                                <option value="0">جميع الاقسام</option>
+                                <option value="1">تمليك</option>
+                                <option value="2">إيجار</option>
+                              </select>
+                            </div>
+
+                            <!--Form Group-->
+
+                            <!--Form Group-->
+
+                            <!--Form Group-->
+
+                            <!--Form Group-->
+
+                            <!--Form Group-->
+                            <div class="form-group col-md-3 col-sm-4 col-xs-12">
+                              <label class="field-label">عنوان الاعلان</label>
+
+                              <input
+                                type="text"
+                                id="title"
+                                name="title"
+                                value=""
+                                style="background-color: #ffffff"
+                              />
+                            </div>
+
+                            <!--Form Group-->
+                            <div class="form-group col-md-3 col-sm-4 col-xs-12">
+                              <label class="field-label empty">&ensp;</label>
+                              <button
+                                class="theme-btn search-btn"
+                                type="submit"
+                                name="submit-form"
+                              >
+                                البحث
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <!--End Form -->
+                    </div>
+                  </div>
+
+                  <!--Tab-->
+                  <div class="tab" id="rent">
+                    <div class="content">
+                      <!-- Property Search Form -->
+                      <div class="property-search-form">
+                        <!--Comment Form-->
+                        <form
+                          action="https://tamlikalnahdi.com/Estate/search"
+                          method="post"
+                          enctype="multipart/form-data"
+                          autocomplete="off"
+                        >
+                          <input
+                            type="hidden"
+                            name="_token"
+                            value="tTdnT42CeXTIBl9pjdu75OaecpQaODxV9aDU7lf8"
+                          />
+                          <div class="row clearfix">
+                            <!--Form Group-->
+                            <div class="form-group col-md-3 col-sm-4 col-xs-12">
+                              <label class="field-label">المدينة</label>
+                              <select
+                                class="custom-select-box"
+                                id="city_id"
+                                name="city_id"
+                              >
+                                <option value="0">جميع المدن</option>
+                                <option value="1">جده</option>
+                                <option value="2">الطائف</option>
+                                <option value="3">الخرج</option>
+                                <option value="4">الرياض</option>
+                              </select>
+                            </div>
+
+                            <!--Form Group-->
+                            <div class="form-group col-md-3 col-sm-4 col-xs-12">
+                              <label class="field-label">القسم</label>
+                              <select
+                                class="custom-select-box"
+                                id="estatetype_id"
+                                name="estatetype_id"
+                              >
+                                <option value="0">جميع الاقسام</option>
+                                <option value="1">عمارة</option>
+                                <option value="2">ارض</option>
+                              </select>
+                            </div>
+
+                            <!--Form Group-->
+
+                            <!--Form Group-->
+
+                            <!--Form Group-->
+
+                            <!--Form Group-->
+
+                            <!--Form Group-->
+
+                            <!--Form Group-->
+                            <div class="form-group col-md-3 col-sm-4 col-xs-12">
+                              <label class="field-label">عنوان الاعلان</label>
+
+                              <input
+                                type="text"
+                                id="title"
+                                name="title"
+                                value=""
+                                style="background-color: #ffffff"
+                              />
+                            </div>
+                            <div class="form-group col-md-3 col-sm-4 col-xs-12">
+                              <label class="field-label">&ensp;</label>
+                              <button
+                                class="theme-btn search-btn"
+                                type="submit"
+                                name="submit-form"
+                              >
+                                البحث
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <!--End Property Form -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--End Product Info Tabs-->
+          </div>
+        </div>
+      </section>
+
+      <section class="property-section">
+        <div class="auto-container">
+          <!--Sec Title-->
+          <div class="sec-title centered">
+            <div class="title">الشقق</div>
+            <h2>اخر الاعلانات</h2>
+            <div class="separator"></div>
+          </div>
+          <div class="row clearfix">
+            <!--Property Block-->
+            <div class="property-block col-md-4 col-sm-6 col-xs-12">
+              <div class="inner-box">
+                <div class="image">
+                  <a href="https://tamlikalnahdi.com/apartsdetail/23"
+                    ><img
+                      src="https://tamlikalnahdi.com/laravel/public/img/اعلان للموقع الإلكتروني جوهرة رحاب واجهة شرقي 880.png"
+                      alt=""
+                      style="height: 270px; width: 370px"
+                  /></a>
+
+                  <div class="price">880000</div>
+                </div>
+                <div class="lower-content">
+                  <div class="upper-box">
+                    <h3>
+                      <a href="https://tamlikalnahdi.com/apartsdetail/23"
+                        >مشــروع جـوهـرة الـرحـاب ملـحق مع سطح للتمليك</a
+                      >
+                    </h3>
+                    <div class="location">جده</div>
+                    <div class="text"></div>
+                  </div>
+                  <div class="lower-box clearfix">
+                    <div class="pull-left">
+                      <ul>
+                        <li><span class="icon flaticon-bed-1"></span>4</li>
+                        <li>
+                          <span
+                            class="icon flaticon-bathtube-with-shower"
+                          ></span
+                          >4
+                        </li>
+                        <li><span class="icon flaticon-garage"></span>1</li>
+                      </ul>
+                    </div>
+                    <div class="pull-right">
+                      <ul>
+                        <li>
+                          <span class="icon fa fa-money"></span>&nbsp; &nbsp;
+                          880000
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="property-block col-md-4 col-sm-6 col-xs-12">
+              <div class="inner-box">
+                <div class="image">
+                  <a href="https://tamlikalnahdi.com/apartsdetail/21"
+                    ><img
+                      src="https://tamlikalnahdi.com/laravel/public/img/صورة واتساب بتاريخ 2022-11-02 في 21.48.43.jpg"
+                      alt=""
+                      style="height: 270px; width: 370px"
+                  /></a>
+
+                  <div class="price">880000</div>
+                </div>
+                <div class="lower-content">
+                  <div class="upper-box">
+                    <h3>
+                      <a href="https://tamlikalnahdi.com/apartsdetail/21"
+                        >(مشروع جوهرة الرحاب) شقة سكنية للتمليك أمامية على
+                        شارعين</a
+                      >
+                    </h3>
+                    <div class="location">جده</div>
+                    <div class="text"></div>
+                  </div>
+                  <div class="lower-box clearfix">
+                    <div class="pull-left">
+                      <ul>
+                        <li><span class="icon flaticon-bed-1"></span>5</li>
+                        <li>
+                          <span
+                            class="icon flaticon-bathtube-with-shower"
+                          ></span
+                          >4
+                        </li>
+                        <li><span class="icon flaticon-garage"></span>1</li>
+                      </ul>
+                    </div>
+                    <div class="pull-right">
+                      <ul>
+                        <li>
+                          <span class="icon fa fa-money"></span>&nbsp; &nbsp;
+                          880000
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="property-block col-md-4 col-sm-6 col-xs-12">
+              <div class="inner-box">
+                <div class="image">
+                  <a href="https://tamlikalnahdi.com/apartsdetail/20"
+                    ><img
+                      src="https://tamlikalnahdi.com/laravel/public/img/photo_٢٠٢٢-١٢-٢٦_٢٠-٠٩-٥٥.jpg"
+                      alt=""
+                      style="height: 270px; width: 370px"
+                  /></a>
+
+                  <div class="price">850000</div>
+                </div>
+                <div class="lower-content">
+                  <div class="upper-box">
+                    <h3>
+                      <a href="https://tamlikalnahdi.com/apartsdetail/20"
+                        >(مشروع جوهرة الرحاب) - شقة سكنية للتمليك أمامية على
+                        شارع</a
+                      >
+                    </h3>
+                    <div class="location">جده</div>
+                    <div class="text"></div>
+                  </div>
+                  <div class="lower-box clearfix">
+                    <div class="pull-left">
+                      <ul>
+                        <li><span class="icon flaticon-bed-1"></span>5</li>
+                        <li>
+                          <span
+                            class="icon flaticon-bathtube-with-shower"
+                          ></span
+                          >4
+                        </li>
+                        <li><span class="icon flaticon-garage"></span>1</li>
+                      </ul>
+                    </div>
+                    <div class="pull-right">
+                      <ul>
+                        <li>
+                          <span class="icon fa fa-money"></span>&nbsp; &nbsp;
+                          850000
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--Property Block-->
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="counter-section"
+        style="
+          background-image: url(http://tamlikalnahdi.com/laravel/public/img/real-estate.jpg);
+        "
+      >
+        <div class="auto-container">
+          <div class="row clearfix">
+            <!--Title Column-->
+
+            <!--Counter Column-->
+            <div class="counter-column col-md-8 col-sm-12 col-xs-12">
+              <div class="inner-column">
+                <div class="fact-counter">
+                  <div class="row clearfix">
+                    <!--Column-->
+                    <div
+                      class="column counter-column col-md-3 col-sm-6 col-xs-12"
+                    >
+                      <div class="inner">
+                        <div class="icon-box">
+                          <span class="icon fa fa-flag-checkered"></span>
+                        </div>
+                        <h4 class="counter-title">طلبات العملاء</h4>
+                        <div class="count-outer count-box">
+                          <span
+                            class="count-text"
+                            data-speed="2000"
+                            data-stop="10000"
+                            >0</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <!--Column-->
+                    <div
+                      class="column counter-column col-md-3 col-sm-6 col-xs-12"
+                    >
+                      <div class="inner">
+                        <div class="icon-box">
+                          <span class="icon fa fa-building"></span>
+                        </div>
+                        <h4 class="counter-title">الشقق</h4>
+                        <div class="count-outer count-box">
+                          <span
+                            class="count-text"
+                            data-speed="2000"
+                            data-stop="1900"
+                            >0</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <!--Column-->
+                    <div
+                      class="column counter-column col-md-3 col-sm-6 col-xs-12"
+                    >
+                      <div class="inner">
+                        <div class="icon-box">
+                          <span class="icon fa fa-home"></span>
+                        </div>
+                        <h4 class="counter-title">المنازل والفلل</h4>
+                        <div class="count-outer count-box">
+                          <span
+                            class="count-text"
+                            data-speed="2000"
+                            data-stop="100"
+                            >0</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <!--Column-->
+                    <div
+                      class="column counter-column col-md-3 col-sm-6 col-xs-12"
+                    >
+                      <div class="inner">
+                        <div class="icon-box">
+                          <span class="icon flaticon-user"></span>
+                        </div>
+                        <h4 class="counter-title">العملاء</h4>
+                        <div class="count-outer count-box">
+                          <span
+                            class="count-text"
+                            data-speed="3000"
+                            data-stop="10000"
+                            >0</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="title-column col-md-4 col-sm-12 col-xs-12">
+              <div class="inner-column">
+                <h2>
+                  نفتخر <br />
+                  بأننا نقدم لكم <br />
+                  هذه الاحصائيات
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="property-section">
+        <div class="auto-container">
+          <!--Sec Title-->
+          <div class="sec-title centered">
+            <div class="title">العقارات</div>
+            <h2>اخر الاعلانات</h2>
+            <div class="separator"></div>
+          </div>
+          <div class="row clearfix">
+            <!--Property Block-->
+
+            <!--Property Block-->
+          </div>
+        </div>
+      </section>
+
+      <script
+        data-cfasync="false"
+        src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+      ></script>
+      <script src="https://tamlikalnahdi.com/assets/website/js/jquery.js"></script>
+
+      <!--Revolution Slider-->
+      <script src="https://tamlikalnahdi.com/assets/website/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
+      <script src="https://tamlikalnahdi.com/assets/website/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
+      <script src="https://tamlikalnahdi.com/assets/website/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+      <script src="https://tamlikalnahdi.com/assets/website/plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+      <script src="https://tamlikalnahdi.com/assets/website/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+      <script src="https://tamlikalnahdi.com/assets/website/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+      <script src="https://tamlikalnahdi.com/assets/website/plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+      <script src="https://tamlikalnahdi.com/assets/website/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+      <script src="https://tamlikalnahdi.com/assets/website/plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+      <script src="https://tamlikalnahdi.com/assets/website/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+      <script src="https://tamlikalnahdi.com/assets/website/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
+      <script src="https://tamlikalnahdi.com/assets/website/js/main-slider-script.js"></script>
+
+      <script src="https://tamlikalnahdi.com/assets/website/js/bootstrap.min.js"></script>
+      <script src="https://tamlikalnahdi.com/assets/website/js/jquery.fancybox.js"></script>
+      <script src="https://tamlikalnahdi.com/assets/website/js/owl.js"></script>
+      <script src="https://tamlikalnahdi.com/assets/website/js/jquery-ui.js"></script>
+      <script src="https://tamlikalnahdi.com/assets/website/js/isotope.js"></script>
+      <script src="https://tamlikalnahdi.com/assets/website/js/wow.js"></script>
+      <script src="https://tamlikalnahdi.com/assets/website/js/appear.js"></script>
+      <script src="https://tamlikalnahdi.com/assets/website/js/script.js"></script>
+      <script src="https://tamlikalnahdi.com/assets/website/js/intlTelInput.js"></script>
+      <script src="https://tamlikalnahdi.com/assets/website/js/mixitup.js"></script>
+
+      <footer class="footer-style-two">
+        <div class="auto-container">
+          <!--Upper Box-->
+
+          <!--Widgets Section-->
+          <div class="widgets-section">
+            <div class="row clearfix">
+              <!--big column-->
+              <div class="big-column col-md-6 col-sm-12 col-xs-12">
+                <div class="row clearfix">
+                  <!--Footer Column-->
+                  <div class="footer-column col-md-7 col-sm-6 col-xs-12">
+                    <div class="footer-widget links-widget">
+                      <h2>اتصل بنا</h2>
+                      <ul class="list-style-one style-two">
+                        <li>
+                          <span class="icon fa fa-phone"></span>0531327327 -
+                          0502791791
+                        </li>
+                        <li>
+                          <a
+                            href="/cdn-cgi/l/email-protection#51383f373e1125303c3d383a303d3f303935387f323e3c"
+                          >
+                            <span
+                              class="__cf_email__"
+                              data-cfemail="c6afa8a0a986b2a7abaaafada7aaa8a7aea2afe8a5a9ab"
+                              >[email&#160;protected]</span
+                            >
+                          </a>
+                          <span class="icon fa fa-envelope-o"></span>
+                        </li>
+                        <li>
+                          <span class="icon fa fa-clock-o"></span>جده - حي
+                          العزيزية - شارع الاربعين (سابقا) - شارع الأمير متعب
+                          المتجهة جنوب كبري التحلية
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!--Footer Column-->
+                  <div class="footer-column col-md-5 col-sm-6 col-xs-12">
+                    <div class="footer-widget links-widget">
+                      <h2>اخر العقارات</h2>
+                      <ul class="links">
+                        <li>
+                          <a href="#"
+                            >مشــروع جـوهـرة الـرحـاب ملـحق مع سطح للتمليك</a
+                          >
+                        </li>
+
+                        <li>
+                          <a href="#"
+                            >(مشروع جوهرة الرحاب) شقة سكنية للتمليك أمامية على
+                            شارعين</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--big column-->
+              <div class="big-column col-md-6 col-sm-12 col-xs-12">
+                <div class="row clearfix">
+                  <!--Footer Column-->
+                  <div class="footer-column col-md-5 col-sm-6 col-xs-12">
+                    <div class="footer-widget links-widget">
+                      <h2>روابط سريعة</h2>
+                      <ul class="links">
+                        <li>
+                          <a href="https://tamlikalnahdi.com/about">نبذه عنا</a>
+                        </li>
+                        <li>
+                          <a href="https://tamlikalnahdi.com/aparts"
+                            >عروض الشقق</a
+                          >
+                        </li>
+                        <li>
+                          <a href="https://tamlikalnahdi.com/estates"
+                            >عروض العقارات
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://tamlikalnahdi.com/news"
+                            >اخر الاخبار</a
+                          >
+                        </li>
+                        <li>
+                          <a href="https://tamlikalnahdi.com/contact"
+                            >اتصل بنا</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!--Footer Column-->
+
+                  <div class="footer-column col-md-7 col-sm-6 col-xs-12">
+                    <div class="footer-widget links-widget">
+                      <h2>تمليك النهدي</h2>
+
+                      <h4>
+                        <div class="text">
+                          <p>
+                            <strong
+                              >&nbsp;نحن مؤسسة علي عمر عقيل النهدي للخدمات
+                              العقارية &nbsp;</strong
+                            >
+                          </p>
+                          <p><strong>ثقة واتقان</strong></p>
+                        </div>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="upper-box">
+          <div class="row clearfix">
+            <!--Logo Column-->
+            <div class="logo-column col-lg-3 col-md-12 col-sm-12 col-xs-12">
+              <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="" /></a>
+              </div>
+            </div>
+
+            <!--form Column-->
+
+            <!--Social Column-->
+            <div class="social-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <ul class="social-icon-two">
+                <li>
+                  <a href="ddddhttps://www.facebook.com/tamliklifestyle/ "
+                    ><span class="fa fa-facebook"></span
+                  ></a>
+                </li>
+                <li>
+                  <a href="ddd "><span class="fa fa-twitter"></span></a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/tamlikalnahdi/ "
+                    ><span class="fa fa-instagram"></span
+                  ></a>
+                </li>
+                <li>
+                  <a href="sdfsdf "><span class="fa fa-youtube"></span></a>
+                </li>
+                <li>
+                  <a href="https://wa.me/0531327327 "
+                    ><span class="fa fa-whatsapp"></span
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--Footer Bottom-->
+        <div class="footer-bottom">
+          <div class="copyright">
+            جميع الحقوق محفوظة لشركة النهدي العقارية &copy; 2023
+          </div>
+        </div>
+      </footer>
+
+      <script
+        data-cfasync="false"
+        src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+      ></script>
+    </body>
+  </html>
+</html>
